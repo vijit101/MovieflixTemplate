@@ -1,9 +1,61 @@
 import React from "react";
 
-export default class movieCard extends React.Component{
-    render(){
-        return(
-        <h1>Movie card</h1>
-        );
-    }
+class MovieCard extends React.Component {
+    
+    constructor(){
+        super();
+        this.state = {
+            title:"the Avengers",
+            plot:"superheroes",
+            price:199,
+            rating:9.8
+        }
+    } 
+  render() {
+    const {title , plot , price , rating } = this.state;
+    return (
+      <div className="main">
+        <div className="movie-card">
+          <div className="left">
+            <img
+              alt="Poster"
+              src="https://m.media-amazon.com/images/I/91hIN+dNYUL.jpg"
+            />
+          </div>
+
+          <div className="right">
+            <div className="title">{title}</div>
+            <div className="plot">{plot}</div>
+            <div className="price">{price}</div>
+
+            <div className="footer">
+              <div className="rating">{rating}</div>
+              <div className="star-dis">
+                <img
+                  className="str-btn"
+                  alt="decrease"
+                  src="https://cdn-icons-png.flaticon.com/128/43/43625.png"
+                />
+                <img
+                  className="stars"
+                  alt="stars"
+                  src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
+                />
+                <img
+                  className="str-btn"
+                  alt="Increase"
+                  src="https://cdn-icons-png.flaticon.com/128/748/748113.png"
+                />
+                <span>0</span>
+              </div>
+              <button className="favourite-btn">Favourites</button>
+              <button className="cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
+export default MovieCard;

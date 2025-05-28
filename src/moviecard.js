@@ -23,6 +23,9 @@ class MovieCard extends React.Component {
       // );
       // console.log("Stars added");
 
+      if(this.state.stars>=5){
+        return;
+      }
       this.setState((prevState)=>{
         return {
           stars : prevState.stars+0.5
@@ -32,6 +35,9 @@ class MovieCard extends React.Component {
     }
 
     subtractStars = ()=>{
+       if(this.state.stars<=0){
+        return;
+      }
       this.setState((prevState)=>{
         return {
           stars : prevState.stars-0.5

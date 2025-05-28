@@ -15,6 +15,7 @@ class MovieCard extends React.Component {
     } 
   
     addStars(){
+      this.state.stars += 0.5;
       console.log("Stars added");
     }
   render() {

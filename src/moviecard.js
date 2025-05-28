@@ -18,10 +18,25 @@ class MovieCard extends React.Component {
     } 
   
     addStars(){
-      this.setState(
-        {stars : this.state.stars + 0.5}
-      );
-      console.log("Stars added");
+      // this.setState(
+      //   {stars : this.state.stars + 0.5}
+      // );
+      // console.log("Stars added");
+
+      this.setState((prevState)=>{
+        return {
+          stars : prevState.stars+0.5
+        } // {} as returning object 
+      })
+
+    }
+
+    subtractStars = ()=>{
+      this.setState((prevState)=>{
+        return {
+          stars : prevState.stars-0.5
+        } // {} as returning object 
+      })
     }
   render() {
     const {title , plot , price , rating , stars} = this.state;
@@ -47,6 +62,7 @@ class MovieCard extends React.Component {
                   className="str-btn"
                   alt="decrease"
                   src="https://cdn-icons-png.flaticon.com/128/43/43625.png"
+                  onClick={this.subtractStars}
                 />
                 <img
                   className="stars"
@@ -57,7 +73,7 @@ class MovieCard extends React.Component {
                   className="str-btn"
                   alt="Increase"
                   src="https://cdn-icons-png.flaticon.com/128/748/748113.png"
-                  onClick={this.addStars.bind(this)} // or instead use addStars = ()=>{} arrow function automatically binds fx() to its class
+                  onClick={this.addStars} // or instead use addStars = ()=>{} arrow function automatically binds fx() to its class
                 />
                 <span className="star-number">{stars}</span>
               </div>

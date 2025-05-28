@@ -9,7 +9,9 @@ class MovieCard extends React.Component {
             plot:"superheroes",
             price:199,
             rating:9.8,
-            stars:0
+            stars:0,
+            isfav : true,
+            isAddCart : true
         }
 
 
@@ -33,6 +35,23 @@ class MovieCard extends React.Component {
       })
 
     }
+    favouriteButtonChange = ()=>{
+      this.setState((prevState)=>{
+        return{
+            isfav : !prevState.isfav
+          }
+        
+      })
+    }
+
+    addToCartButtonToggle = ()=>{
+      this.setState((prevState)=>{
+        return{
+            isAddCart : !prevState.isAddCart
+          }
+        
+      })
+    }
 
     subtractStars = ()=>{
        if(this.state.stars<=0){
@@ -44,6 +63,9 @@ class MovieCard extends React.Component {
         } // {} as returning object 
       })
     }
+
+
+    
   render() {
     const {title , plot , price , rating , stars} = this.state;
     return (
@@ -83,8 +105,11 @@ class MovieCard extends React.Component {
                 />
                 <span className="star-number">{stars}</span>
               </div>
-              <button className="favourite-btn">Favourites</button>
-              <button className="cart-btn">Add to Cart</button>
+              {this.state.isfav? <button onClick={this.favouriteButtonChange} className="favourite-btn">Favourites</button> : <button onClick={this.favouriteButtonChange} className="unfavourite-btn">Unfavourite</button> }
+              {/* <button className="favourite-btn">Favourites</button> */}
+              { <button onClick={this.addToCartButtonToggle} className= {this.state.isAddCart?"cart-btn":"remove-cart" }>{this.state.isAddCart?"Add to Cart":"Remove Cart"}</button>}
+
+              {/* <button className="cart-btn">Add to Cart</button> */}
             </div>
           </div>
         </div>

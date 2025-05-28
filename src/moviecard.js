@@ -8,15 +8,17 @@ class MovieCard extends React.Component {
             title:"the Avengers",
             plot:"superheroes",
             price:199,
-            rating:9.8
+            rating:9.8,
+            stars:0
         }
+        this.addStars = this.addStars.bind(this);
     } 
   
     addStars(){
       console.log("Stars added");
     }
   render() {
-    const {title , plot , price , rating } = this.state;
+    const {title , plot , price , rating , stars} = this.state;
     return (
       <div className="main">
         <div className="movie-card">
@@ -51,7 +53,7 @@ class MovieCard extends React.Component {
                   src="https://cdn-icons-png.flaticon.com/128/748/748113.png"
                   onClick={this.addStars.bind(this)} // or instead use addStars = ()=>{} arrow function automatically binds fx() to its class
                 />
-                <span>0</span>
+                <span className="star-number">{stars}</span>
               </div>
               <button className="favourite-btn">Favourites</button>
               <button className="cart-btn">Add to Cart</button>

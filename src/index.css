@@ -117,6 +117,13 @@ footer.starCount {
       margin: 5px;
     
 }
+
+.remove-cart{
+  background-color: #db2828;
+  color: #fff;
+  text-shadow: none;
+  margin: 5px;
+}
 .unfavourite-btn {
   background-color: #db2828;
   color: #fff;

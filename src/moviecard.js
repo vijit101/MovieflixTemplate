@@ -2,14 +2,14 @@ import React from "react";
 
 class MovieCard extends React.Component {
     
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            title:"the Avengers",
-            plot:"superheroes",
-            price:199,
-            rating:9.8,
-            stars:0,
+            title: this.props.titleProp,
+            plot: this.props.plotProp,
+            price: this.props.priceProp,
+            rating:this.props.ratingProp,
+            stars:this.props.starsProp,
             isfav : true,
             isAddCart : true
         }

@@ -1,6 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard.js";
 
+
 class MovieList extends React.Component {
   constructor() {
     super();
@@ -147,8 +148,7 @@ class MovieList extends React.Component {
           Language: "English, French",
           Country: "USA",
           Awards: "Nominated for 5 Oscars. Another 35 wins & 154 nominations.",
-          Poster: "https://m.media-amazon.com/images/I/51wgJZOiS0L._AC_UF1000,1000_QL80_.jpg"
-            ,
+          Poster: "https://m.media-amazon.com/images/I/51wgJZOiS0L._AC_UF1000,1000_QL80_.jpg",
           Metascore: "75",
           mrating: "8.2",
           imdbVotes: "786,985",

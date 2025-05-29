@@ -32,4 +32,13 @@ class MovieList extends React.Component {
   }
 }
 
+
+MovieCard.defaultProps = {
+  titleProp : "default title ",
+  plotProp : "default plot", 
+  priceProp : "default price",
+  ratingProp : "default rating",
+  starsProp : "default stars"
+}
+
 export default MovieList;

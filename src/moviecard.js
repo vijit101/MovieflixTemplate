@@ -10,6 +10,7 @@ class MovieCard extends React.Component {
             price: this.props.priceProp,
             rating:this.props.ratingProp,
             stars:this.props.starsProp,
+            Poster : this.props.posterProp,
             isfav : true,
             isAddCart : true
         }
@@ -67,14 +68,15 @@ class MovieCard extends React.Component {
 
     
   render() {
-    const {title , plot , price , rating , stars} = this.state;
+    const {title , plot , price , rating , stars , Poster} = this.state;
     return (
       <div className="main">
         <div className="movie-card">
           <div className="left">
             <img
-              alt="Poster"
-              src="https://m.media-amazon.com/images/I/91hIN+dNYUL.jpg"
+            src= {Poster}
+            alt="Poster"
+              
             />
           </div>
 

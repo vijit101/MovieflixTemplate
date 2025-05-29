@@ -2,21 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 const MyNavStyle = styled.div`
-
+width: 100%;
+  height: 70px;
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
 `
 
 class NavBar extends React.Component{
     render(){
         return(
         <>
-        <div className="navbarcontainer">
+        <MyNavStyle>
            <div className="navbartitle" style={styles.title}>Title</div>
 
            <div className="cart">
             <img style={styles.cart} alt= "Cart Icon" src="https://cdn-icons-png.flaticon.com/128/12718/12718415.png"/>
             <span>Number</span>
            </div>
-        </div>
+        </MyNavStyle>
         </>
         )
     }

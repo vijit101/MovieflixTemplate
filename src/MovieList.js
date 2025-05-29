@@ -1,13 +1,13 @@
 import React from "react";
 import MovieCard from "./MovieCard.js";
 
-
 class MovieList extends React.Component {
   constructor() {
     super();
     this.state = {
       movieCardList: [
         {
+          id: 1,
           mtitle: "Avatar",
           Year: "2009",
           Rated: "PG-13",
@@ -40,6 +40,7 @@ class MovieList extends React.Component {
           ],
         },
         {
+          id: 2,
           mtitle: "I Am Legend",
           Year: "2007",
           Rated: "PG-13",
@@ -72,6 +73,7 @@ class MovieList extends React.Component {
           ],
         },
         {
+          id: 3,
           mtitle: "300",
           Year: "2006",
           Rated: "R",
@@ -102,6 +104,7 @@ class MovieList extends React.Component {
           ],
         },
         {
+          id: 4,
           mtitle: "The Avengers",
           Year: "2012",
           Rated: "PG-13",
@@ -134,6 +137,7 @@ class MovieList extends React.Component {
           ],
         },
         {
+          id: 5,
           mtitle: "The Wolf of Wall Street",
           Year: "2013",
           Rated: "R",
@@ -148,7 +152,8 @@ class MovieList extends React.Component {
           Language: "English, French",
           Country: "USA",
           Awards: "Nominated for 5 Oscars. Another 35 wins & 154 nominations.",
-          Poster: "https://m.media-amazon.com/images/I/51wgJZOiS0L._AC_UF1000,1000_QL80_.jpg",
+          Poster:
+            "https://m.media-amazon.com/images/I/51wgJZOiS0L._AC_UF1000,1000_QL80_.jpg",
           Metascore: "75",
           mrating: "8.2",
           imdbVotes: "786,985",
@@ -165,6 +170,7 @@ class MovieList extends React.Component {
           ],
         },
         {
+          id: 6,
           mtitle: "Interstellar",
           Year: "2014",
           Rated: "PG-13",
@@ -215,7 +221,7 @@ class MovieList extends React.Component {
         {this.state.movieCardList.map((movie, index) => {
           return (
             <MovieCard
-              key={index}
+              key={movie.id}
               titleProp={movie.mtitle}
               plotProp={movie.mplot}
               priceProp={movie.mprice}
@@ -236,7 +242,6 @@ MovieCard.defaultProps = {
   priceProp: "default price",
   ratingProp: "default rating",
   starsProp: "default stars",
-  
 };
 
 export default MovieList;
